@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    namespace :v1 do
+      post 'authenticate', to: 'authentication#authenticate'
+      post 'save-state', to: 'client_states#save_state'
+      get 'retrieve-state', to: 'client_states#retrieve_state'
+      resources :users
+    end
+  end
 end
