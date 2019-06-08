@@ -1,7 +1,6 @@
 class Api::V1::ClientStatesController < ApplicationController
-
   def save_state
-    @client_state = params.to_json
+    @client_state = params[:state].to_json
 
     @client_state_json = current_user
       .json_client_states
