@@ -2,12 +2,6 @@ class Api::V1::AuthenticationController < ApplicationController
   skip_before_action :authenticate_request
 
   def authenticate
-    p "------ CHECKING PARAMS ------"
-    p "------ CHECKING PARAMS ------"
-    "email #{params[:email]}"
-    "password: #{params[:password]}"
-    p "------ CHECKING PARAMS ------"
-    p "------ CHECKING PARAMS ------"
     command = AuthenticateUser.call(params[:email], params[:password])
 
     if command.success?

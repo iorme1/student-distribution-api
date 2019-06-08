@@ -7,13 +7,6 @@ class AuthenticateUser
   end
 
   def call
-    p "INSIDE AuthenticateUser #call method"
-    p "INSIDE AuthenticateUser #call method"
-    p "user #{user}"
-    p "user_id #{user.id}"
-    p "INSIDE AuthenticateUser #call method"
-    p "INSIDE AuthenticateUser #call method"
-
     JsonWebToken.encode(user_id: user.id) if user
   end
 
