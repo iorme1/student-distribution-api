@@ -2,6 +2,12 @@ class JsonWebToken
   class << self
     def encode(payload, exp = 24.hours.from_now)
       payload[:exp] = exp.to_i
+      p "INSIDE JsonWebToken encode method"
+      p "INSIDE JsonWebToken encode method"
+      p "payload #{payload}"
+      p "Rails Secret #{Rails.application.secrets.secret_key_base}"
+      p "INSIDE JsonWebToken encode method"
+      p "INSIDE JsonWebToken encode method"
       JWT.encode(payload, Rails.application.secrets.secret_key_base)
     end
 
@@ -10,6 +16,6 @@ class JsonWebToken
       HashWithIndifferentAccess.new body
     rescue
       nil
-    end 
+    end
   end
 end

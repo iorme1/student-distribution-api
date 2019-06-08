@@ -7,6 +7,13 @@ class AuthenticateUser
   end
 
   def call
+    p "INSIDE AuthenticateUser #call method"
+    p "INSIDE AuthenticateUser #call method"
+    p "user #{user}"
+    p "user_id #{user.id}"
+    p "INSIDE AuthenticateUser #call method"
+    p "INSIDE AuthenticateUser #call method"
+
     JsonWebToken.encode(user_id: user.id) if user
   end
 
@@ -16,13 +23,8 @@ class AuthenticateUser
 
   def user
     user = User.find_by_email(email)
-    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
-    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
-    p "user #{user}"
-    p "email #{email}"
+
     return user if user && user.authenticate(password)
-    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
-    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
 
     errors.add :user_authentication, 'invalid credentials'
     nil
