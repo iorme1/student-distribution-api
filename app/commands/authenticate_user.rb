@@ -16,7 +16,13 @@ class AuthenticateUser
 
   def user
     user = User.find_by_email(email)
+    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
+    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
+    p "user #{user}"
+    p "email #{email}"
     return user if user && user.authenticate(password)
+    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
+    p "CHECKiNG IF USER.find_by_email(email) IS WORKING"
 
     errors.add :user_authentication, 'invalid credentials'
     nil
