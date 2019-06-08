@@ -11,8 +11,7 @@ gem 'puma', '~> 3.11'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-
-gem 'simple_command'
+gem 'simple_command', '~> 0.0.9'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'bootsnap', '>= 1.1.0', require: false
