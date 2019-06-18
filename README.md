@@ -5,16 +5,18 @@ can find here https://github.com/iorme1/student-distribution-frontend
 
 ## Features
 
-This API allows for the following:
--Account creation
--Saving Client-side state
--Retrieving Client-side state
+This API allows for the following:  
+
+1) Account creation  
+2) Saving client-side state  
+3) Retrieving client-side state  
 
 ## Tech
-Ruby 2.4
-Rails API 5.2
-PostgreSQL
-JWT for authentication 
+
+Ruby 2.4  
+Rails API 5.2  
+PostgreSQL  
+JWT for authentication  
 
 ## Setup Instructions
 
