@@ -1,24 +1,41 @@
-# README
+## Student Distribution API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the API used by the Student-Distribution frontend app, which you
+can find here https://github.com/iorme1/student-distribution-frontend
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+This API allows for the following:
+-Account creation
+-Saving Client-side state
+-Retrieving Client-side state
 
-* System dependencies
+## Tech
+Ruby 2.4
+Rails API 5.2
+PostgreSQL
+JWT for authentication 
 
-* Configuration
+## Setup Instructions
 
-* Database creation
+1) Fork/Clone this repository
+2) cd into root folder
 
-* Database initialization
+For steps 3 through 6, run these commands in the terminal.
 
-* How to run the test suite
+3) bundle install
+4) rake db:create
+5) rake db:migrate
+6) bundle exec figaro install
 
-* Services (job queues, cache servers, search engines, etc.)
+After step 6, create a secret inside config/application.yml
+with "AUTH_SECRET" as the key.
 
-* Deployment instructions
+Example:  AUTH_SECRET: 'your-secret-key-here'
 
-* ...
+Finally, make sure to run this rails app on a different port from the
+student-distribution frontend app. I typically have localhost:3000 for
+the frontend and localhost:3001 for the backend. For rails, simply
+type "rails s -p 3001" in the terminal to start up the backend on port 3001.
+
+That's it!
